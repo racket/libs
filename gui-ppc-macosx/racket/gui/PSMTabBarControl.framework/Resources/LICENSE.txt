@@ -1,0 +1,3 @@
+  PSMTabBarControl
+  John Pannell, Robert Payne, Adam Strzelecki, Dorian Johnson
+  https://github.com/dorianj/PSMTabBarControl
