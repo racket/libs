@@ -1,0 +1,39 @@
+draw-x86_64-macosx-2
+Copyright (c) 2010-2014 PLT Design Inc.
+
+This package is distributed under the GNU Lesser General Public
+License (LGPL).  This means that you can link this package into
+proprietary applications, provided you follow the rules stated in the
+LGPL.  You can also modify this package; if you distribute a modified
+version, you must distribute it under the terms of the LGPL, which in
+particular means that you must release the source code for the
+modified software.  See http://www.gnu.org/copyleft/lesser.html
+for more information.
+
+libffi - Copyright (c) 1996-2014  Anthony Green, Red Hat, Inc and others.
+
+GLib is released under the GNU Library General Public License (GNU LGPL).
+
+libintl is released under the GNU Library General Public License (GNU LGPL).
+
+HarfBuzz is relased under a MIT license.
+
+Pango is released under the GNU Library General Public License (GNU LGPL).
+
+FontConfig:
+ Copyright © 2000,2001,2002,2003,2004,2006,2007 Keith Packard
+ Copyright © 2005 Patrick Lam
+ Copyright © 2009 Roozbeh Pournader
+ Copyright © 2008,2009 Red Hat, Inc.
+ Copyright © 2008 Danilo Šegan
+ Copyright © 2012 Google, Inc.
+
+Pixman is relased under the FreeType project license.
+
+Cairo is released under the GNU Library General Public License (GNU LGPL).
+
+Pixman is relased under a MIT license.
+
+Libpng is released under the libpng license.
+
+This software is based in part on the work of the Independent JPEG Group.
