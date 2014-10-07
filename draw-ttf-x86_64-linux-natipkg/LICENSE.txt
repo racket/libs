@@ -1,0 +1,19 @@
+draw-ttf-x86_64-linux-natipkg
+Copyright (c) 2010-2014 PLT Design Inc.
+
+This package is distributed under the GNU Lesser General Public
+License (LGPL).  This means that you can link this package into
+proprietary applications, provided you follow the rules stated in the
+LGPL.  You can also modify this package; if you distribute a modified
+version, you must distribute it under the terms of the LGPL, which in
+particular means that you must release the source code for the
+modified software.  See http://www.gnu.org/copyleft/lesser.html
+for more information.
+
+Fonts:
+ Copyright © 2000,2001,2002,2003,2004,2006,2007 Keith Packard
+ Copyright © 2005 Patrick Lam
+ Copyright © 2009 Roozbeh Pournader
+ Copyright © 2008,2009 Red Hat, Inc.
+ Copyright © 2008 Danilo Šegan
+ Copyright © 2012 Google, Inc.
