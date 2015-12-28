@@ -1,4 +1,4 @@
 #lang setup/infotab
-(define copy-foreign-libs (quote ("racket-playsond.exe")))
+(define copy-foreign-libs (quote ("racket-playsound.exe")))
 (define collection 'multi)
 (define install-platform "win32\\x86_64")
