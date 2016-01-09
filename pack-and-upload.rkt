@@ -28,7 +28,7 @@
    (src-dir ; the enclosing directory
     work-dir
     [s3-region "us-west-2"]
-    [bucket "racket-packages"]
+    [bucket "pkg-sources.racket-lang.org"]
     [src-catalog "https://pkgs.racket-lang.org/"]
     [dest-catalog "https://pkgd.racket-lang.org/"])
    (values src-dir work-dir s3-region bucket src-catalog dest-catalog)))
@@ -63,9 +63,8 @@
       (values (path->string i)
               (hash-set ht
                         'source
-                        (format "https://~a.~a/pkgs/~a/~a.zip"
+                        (format "https://~a/pkgs/~a/~a.zip"
                                 bucket
-                                s3-hostname
                                 (hash-ref ht 'checksum)
                                 i))))))
 
@@ -185,9 +184,8 @@
   (hash-set ht 'versions
             (for/fold ([ht2 (hash-ref ht 'versions (hash))]) ([v compatibility-versions])
               (hash-set ht2 v (hash 'source
-                                    (format "https://~a.~a/pkgs/~a"
+                                    (format "https://~a/pkgs/~a"
                                             bucket
-                                            s3-hostname
                                             empty-source)
                                     'checksum
                                     empty-source-checksum)))))
