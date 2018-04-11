@@ -84,7 +84,7 @@
                  r
                  (set-remove
                   (apply set (map (lambda (p) (if (pair? p) (car p) p)) 
-                                  (hash-ref (hash-ref current-pkgs a)
+                                  (hash-ref (hash-ref current-pkgs a #hasheq())
                                             'dependencies
                                             '())))
                   "racket"))))])))
