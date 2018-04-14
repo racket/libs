@@ -1,7 +1,11 @@
 #lang setup/infotab
-(define copy-foreign-libs '("PSMTabBarControl.framework"
-                            "MMTabBarView.framework"))
-(define collection 'multi)
-(define compile-omit-paths '("PSMTabBarControl.framework"
-                             "MMTabBarView.framework"))
+
 (define install-platform "x86_64-macosx")
+
+(define copy-foreign-libs
+  '("MMTabBarView.framework"
+    "PSMTabBarControl.framework"
+    "libatk-1.0.0.dylib"))
+
+(define compile-omit-paths
+  '("MMTabBarView.framework" "PSMTabBarControl.framework"))

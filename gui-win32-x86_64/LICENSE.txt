@@ -1,5 +1,5 @@
 gui-win32-x86_64
-Copyright (c) 2010-2014 PLT Design Inc.
+Copyright (c) 2010-2018 PLT Design Inc.
 
 This package is distributed under the GNU Lesser General Public
 License (LGPL).  This means that you can link this package into
@@ -9,3 +9,5 @@ version, you must distribute it under the terms of the LGPL, which in
 particular means that you must release the source code for the
 modified software.  See http://www.gnu.org/copyleft/lesser.html
 for more information.
+
+ATK is released under the GNU Library General Public License (GNU LGPL).

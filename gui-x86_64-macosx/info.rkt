@@ -1,4 +1,5 @@
 #lang setup/infotab
+
 (define collection 'multi)
 (define deps '("base"))
 
@@ -6,4 +7,4 @@
 
 (define pkg-authors '(mflatt))
 
-(define version "1.1")
+(define version "1.2")
