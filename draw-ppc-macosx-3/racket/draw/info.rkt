@@ -3,7 +3,8 @@
 (define install-platform "ppc-macosx")
 
 (define copy-foreign-libs
-  '("libjpeg.9.dylib"
+  '("libuuid.1.dylib"
+    "libjpeg.9.dylib"
     "libpng16.16.dylib"
     "libpixman-1.0.dylib"
     "libcairo.2.dylib"
@@ -13,8 +14,9 @@
     "libpangoft2-1.0.0.dylib"
     "libpangocairo-1.0.0.dylib"
     "libpango-1.0.0.dylib"
+    "libfribidi.0.dylib"
     "libharfbuzz.0.dylib"
-    "libintl.8.dylib"
+    "libintl.9.dylib"
     "libgobject-2.0.0.dylib"
     "libglib-2.0.0.dylib"
     "libgthread-2.0.0.dylib"
