@@ -1,5 +1,4 @@
 draw-x86_64-macosx-3
-Copyright (c) 2010-2018 PLT Design Inc.
 
 Individual components of this package are distributed under a multiple
 licenses, including the GNU Lesser General Public License (LGPL), the
