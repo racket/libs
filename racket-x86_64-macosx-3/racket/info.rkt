@@ -2,4 +2,5 @@
 
 (define install-platform "x86_64-macosx")
 
-(define copy-foreign-libs '("libssl.1.1.dylib" "libcrypto.1.1.dylib"))
+(define copy-foreign-libs
+  '("libssl.1.1.dylib" "libcrypto.1.1.dylib" "libedit.0.dylib"))
