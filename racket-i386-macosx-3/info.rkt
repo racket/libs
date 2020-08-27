@@ -6,3 +6,5 @@
 (define pkg-desc "native libraries for \"racket\" package")
 
 (define pkg-authors '(mflatt))
+
+(define version "1.1")
