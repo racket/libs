@@ -7,8 +7,5 @@ which the user must also comply.
 
 ATK is released under the GNU Library General Public License (GNU LGPL).
 
-PSMTabBarControl is BSD licensed.
-See: http://www.positivespinmedia.com/dev/PSMTabBarControl.html
-
 MMTabBarView is BSD licensed.
 See: http://mimo42.github.io/MMTabBarView/
