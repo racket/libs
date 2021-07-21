@@ -2,4 +2,4 @@
 
 (define install-platform "x86_64-linux-natipkg")
 
-(define copy-foreign-libs '("libsqlite3.so.0"))
+(define copy-foreign-libs '("libsqlite3.so"))
