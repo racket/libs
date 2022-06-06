@@ -1,4 +1,5 @@
 #lang setup/infotab
+;; SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 (define install-platform "x86_64-macosx")
 

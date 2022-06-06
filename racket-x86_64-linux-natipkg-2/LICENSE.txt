@@ -1,10 +1,10 @@
 racket-x86_64-linux-natipkg-2
 Copyright (c) 2010-2014 PLT Design Inc.
 
-This package is distributed under the Apache 2.0 and MIT licenses. The
-user can choose the license under which they will be using the
-software. There may be other licenses within the distribution with
-which the user must also comply.
+The Racket code in this package is distributed under the Apache 2.0
+and MIT licenses. The user can choose the license under which they
+will be using the software. There may be other licenses within the
+distribution with which the user must also comply.
 
 This product includes software developed by the OpenSSL Project for
 use in the OpenSSL Toolkit (http://www.openssl.org/).

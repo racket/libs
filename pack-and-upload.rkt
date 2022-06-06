@@ -1,4 +1,6 @@
 #lang racket/base
+;; SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 (require aws/keys
          aws/s3
          racket/file

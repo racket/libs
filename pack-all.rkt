@@ -1,4 +1,6 @@
 #lang racket/base
+;; SPDX-License-Identifier: (Apache-2.0 OR MIT)
+
 (require racket/cmdline
          racket/file
          racket/port
