@@ -1,16 +1,18 @@
 racket-win32-x86_64
 Copyright (c) 2010-2014 PLT Design Inc.
 
-This package is distributed under the Apache 2.0 and MIT licenses. The
-user can choose the license under which they will be using the
-software. There may be other licenses within the distribution with
-which the user must also comply.
+The Racket code in this package is distributed under the Apache 2.0
+and MIT licenses. The user can choose the license under which they
+will be using the software. There may be other licenses within the
+distribution with which the user must also comply.
+
+libiconv is released under the GNU Lesser General Public License (GNU LGPL).
 
 This product includes software developed by the OpenSSL Project for
-use in the OpenSSL Toolkit (http://www.openssl.org/).
+use in the OpenSSL Toolkit (https://www.openssl.org/).
 
 Eric Young is the author of libeay and ssleay.
 
 The source to longdouble is included with the Racket source code,
 which is available from
-  http://www.racket-lang.org/
+  https://www.racket-lang.org/

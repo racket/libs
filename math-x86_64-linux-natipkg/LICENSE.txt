@@ -1,15 +1,15 @@
 math-x86_64-linux-natipkg
-Copyright (c) 2010-2018 PLT Design Inc.
 
-This package is distributed under the GNU Lesser General Public
-License (LGPL).  This means that you can link this package into
-proprietary applications, provided you follow the rules stated in the
-LGPL.  You can also modify this package; if you distribute a modified
-version, you must distribute it under the terms of the LGPL, which in
-particular means that you must release the source code for the
-modified software.  See http://www.gnu.org/copyleft/lesser.html
-for more information.
+The Racket code in this package is distributed under the Apache 2.0
+and MIT licenses. The user can choose the license under which they
+will be using the software. There may be other licenses within the
+distribution with which the user must also comply.
 
-GNU MP is released under the GNU Lesser General Public License (GNU LGPL).
+GNU MP is dual licensed under under the conditions of the GNU Lesser
+General Public License (LGPL), version 3, or the GNU General Public
+License (GPL), version 2. This is the recipient’s choice, and the
+recipient also has the additional option of applying later versions of
+these licenses.
 
-MPFR is released under the GNU Lesser General Public License (GNU LGPL).
+MPFR is released under the GNU Lesser General Public License (GNU LGPL),
+either version 3 of the license, or (at your option) any later version.
