@@ -257,7 +257,7 @@
                       (equal? p recently))
           ;; Looks like we can delete it
             (purge-one checksum p)))]
-       [(or (set-member? old-content (string-append "pkgs/" checksum "/" recently))
+       [(or (set-member? old-content (string-append "pkgs/" checksum "/" now))
             (set-member? old-content (string-append "pkgs/" checksum "/" recently)))
         ;; Recent enough timestamp; don't discard
         (void)]
