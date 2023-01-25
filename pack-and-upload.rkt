@@ -95,13 +95,6 @@
 (define old-content (list->set (ls (string-append bucket "/pkgs"))))
 (status "... got it.\n")
 
-;; A list of `(cons checksum p)':
-(define new-checksums&files
-  (let ([dir (build-path work-dir "pkgs")])
-    (for*/list ([checksum (in-list (directory-list dir))]
-                [p (in-list (directory-list (build-path dir checksum)))])
-      (cons (path->string checksum) (path->string p)))))
-
 ;; A tag that we install for each checksum that is used.
 ;; We can detect obsolte checksums as not having a recent
 ;; enough tag (i.e., older than an era). An "era" is
@@ -109,6 +102,37 @@
 (define now-era (quotient (current-seconds) (* 7 24 60 60)))
 (define now (~a now-era))
 (define recently (~a (sub1 now-era)))
+(define rx:tag #rx"^[0-9]*$") ; should match timestamp tags and not packages
+
+;; Map package names to chcksums, because we only want to delete
+;; packages when we have more than one old version
+(define-values (package-to-checksums checksum-to-package checksum-to-timestamp)
+  (for/fold ([ht #hash()] [rev-ht #hash()] [ts-ht #hash()]) ([p (in-set old-content)])
+    (define m (regexp-match #rx"^pkgs/([^/]*)/([^/]*)$" p))
+    (cond
+      [m
+       (define checksum (cadr m))
+       (define maybe-pkg (caddr m))
+       (cond
+         [(regexp-match? rx:tag maybe-pkg)
+          (values ht
+                  rev-ht
+                  (hash-set ts-ht checksum maybe-pkg))]
+         [else
+          (values
+           (hash-update ht maybe-pkg (lambda (cs) (set-add cs checksum)) (set))
+           (hash-set rev-ht checksum maybe-pkg)
+           ts-ht)])]
+      [else (values ht rev-ht ts-ht)])))
+
+(for-each pretty-print (list package-to-checksums checksum-to-package checksum-to-timestamp))
+
+;; A list of `(cons checksum p)':
+(define new-checksums&files
+  (let ([dir (build-path work-dir "pkgs")])
+    (for*/list ([checksum (in-list (directory-list dir))]
+                [p (in-list (directory-list (build-path dir checksum)))])
+      (cons (path->string checksum) (path->string p)))))
 
 ;; ----------------------------------------
 
@@ -252,15 +276,23 @@
       (cond
        [(set-member? new-checksums checksum)
         ;; Keep this checksum, but look for old timestamp files.
-        (when (regexp-match? #rx"^[0-9]*$" p)
+        (when (regexp-match? rx:tag p)
           (unless (or (equal? p now)
                       (equal? p recently))
-          ;; Looks like we can delete it
+            ;; Looks like we can delete it
             (purge-one checksum p)))]
        [(or (set-member? old-content (string-append "pkgs/" checksum "/" now))
             (set-member? old-content (string-append "pkgs/" checksum "/" recently)))
         ;; Recent enough timestamp; don't discard
         (void)]
        [else
-        ;; Old checksum, so discard
-        (purge-one checksum p)]))))
+        ;; Old checksum, but we want to keep up to one old checksum
+        (when (let ([checksums (hash-ref package-to-checksums
+                                         (hash-ref checksum-to-package checksum #f)
+                                         (set))])
+                (for/or ([cs (in-set checksums)])
+                  (define ts (hash-ref checksum-to-timestamp cs))
+                  (and (not (equal? ts now))
+                       (string<? p ts))))
+          ;; Old checksum and not the newest old, so discard
+          (purge-one checksum p))]))))
