@@ -19,6 +19,7 @@
 ;; Versions to map to the empty source:
 (define compatibility-versions '("5.3.4" "5.3.5" "5.3.6"))
 
+(define debug? #t)
 (define dry-run? #f)
 
 (define-values (src-dir work-dir s3-region-name bucket src-catalog dest-catalog)
@@ -96,7 +97,7 @@
 (status "... got it.\n")
 
 ;; A tag that we install for each checksum that is used.
-;; We can detect obsolte checksums as not having a recent
+;; We can detect obsolete checksums as not having a recent
 ;; enough tag (i.e., older than an era). An "era" is
 ;; currently defined as a week.
 (define now-era (quotient (current-seconds) (* 7 24 60 60)))
@@ -125,7 +126,15 @@
            ts-ht)])]
       [else (values ht rev-ht ts-ht)])))
 
-(for-each pretty-print (list package-to-checksums checksum-to-package checksum-to-timestamp))
+(when debug?
+  (displayln "Package to checksum")
+  (pretty-print package-to-checksums)
+  
+  (displayln "Checksum to package")
+  (pretty-print checksum-to-package)
+  
+  (displayln "Checksum to timestamp")
+  (pretty-print checksum-to-timestamp))
 
 ;; A list of `(cons checksum p)':
 (define new-checksums&files
@@ -264,6 +273,8 @@
     (update-catalog catalog-email catalog-password changed-pkgs #t)))
 (status "Catalog updated\n")
 
+(status "Now = ~a\n" now)
+
 ;; Look for files that can be discarded:
 (let ([new-checksums
        (for/set ([pr (in-list new-checksums&files)])
@@ -291,7 +302,7 @@
                                          (hash-ref checksum-to-package checksum #f)
                                          (set))])
                 (for/or ([cs (in-set checksums)])
-                  (define ts (hash-ref checksum-to-timestamp cs))
+                  (define ts (hash-ref checksum-to-timestamp cs now))
                   (and (not (equal? ts now))
                        (string<? p ts))))
           ;; Old checksum and not the newest old, so discard
