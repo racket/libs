@@ -11,4 +11,4 @@
 
 (define version "1.2")
 
-(define license '((Apache-2.0 OR MIT) AND (LGPL-3.0-or-later AND OpenSSL)))
+(define license '((Apache-2.0 OR MIT) AND (LGPL-3.0-or-later AND Apache-2.0)))

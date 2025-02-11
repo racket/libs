@@ -7,11 +7,6 @@ distribution with which the user must also comply.
 
 libiconv is released under the GNU Lesser General Public License (GNU LGPL).
 
-This product includes software developed by the OpenSSL Project for
-use in the OpenSSL Toolkit (https://www.openssl.org/).
-
-Eric Young is the author of libeay and ssleay.
-
 The source to longdouble is included with the Racket source code,
 which is available from
   https://www.racket-lang.org/

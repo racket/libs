@@ -6,8 +6,3 @@ will be using the software. There may be other licenses within the
 distribution with which the user must also comply.
 
 libiconv is released under the GNU Lesser General Public License (GNU LGPL).
-
-This product includes software developed by the OpenSSL Project for
-use in the OpenSSL Toolkit (https://www.openssl.org/).
-
-Eric Young is the author of libeay and ssleay.
