@@ -1,0 +1,16 @@
+draw-x11-aarch64-linux-natipkg
+
+The Racket code in this package is distributed under the Apache 2.0
+and MIT licenses. The user can choose the license under which they
+will be using the software. There may be other licenses within the
+distribution with which the user must also comply.
+
+libXau - Copyright 1988, 1993, 1994, 1998  The Open Group
+
+libxcb - Copyright (C) 2001-2006 Bart Massey, Jamey Sharp, and Josh Triplett.
+
+libX11 is released under the X.Org Foundation license.
+
+libXext - Copyright 1986, 1987, 1988, 1989, 1994, 1998  The Open Group
+
+libXrender - Copyright © 2001,2003 Keith Packard
