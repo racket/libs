@@ -4,4 +4,4 @@
 
 (define install-platform "aarch64-linux-natipkg")
 
-(define copy-foreign-libs '("libssl.so.3" "libcrypto.so.3"))
+(define copy-foreign-libs '("ossl-modules" "libssl.so.3" "libcrypto.so.3"))
