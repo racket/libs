@@ -211,3 +211,34 @@
           (do-package src-dir f)]
          [(directory-exists? src-f)
           (loop src-f)])))))
+
+(define (build-catalog catalog-dir work-dir)
+  (make-directory* (build-path catalog-dir "pkg"))
+  (for ([f (in-list (directory-list work-dir))]
+        #:when (regexp-match? #rx"[.]zip" f))
+    (define pkg-name (path->string (path-replace-extension f #"")))
+    (define p (path->complete-path (build-path work-dir f)))
+    (define pkg-file (build-path catalog-dir "pkg" pkg-name))
+    (call-with-output-file
+     pkg-file
+     #:exists 'truncate
+     (lambda (o)
+       (writeln (hash 'checksum (call-with-input-file p sha1)
+                      'name pkg-name
+                      'source (path->string p))
+                o)))))
+
+(module+ main
+  (require racket/cmdline)
+  (define catalog-dir #f)
+  (command-line
+   #:once-each
+   [("--catalog") dir "Create catalog in <dir>"
+    (set! catalog-dir dir)]
+   #:args
+   (src-dir ; the enclosing directory
+    work-dir)
+   (pack-all #:src-dir src-dir #:work-dir work-dir)
+   (when catalog-dir
+     (build-catalog catalog-dir work-dir))))
+

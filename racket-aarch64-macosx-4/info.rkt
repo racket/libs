@@ -11,4 +11,5 @@
 
 (define version "1.0")
 
-(define license '((Apache-2.0 OR MIT) AND (BSD-3-clause AND Apache-2.0)))
+(define license
+  '((Apache-2.0 OR MIT) AND (BSD-3-clause AND (Apache-2.0 AND 'Apache-2.0))))

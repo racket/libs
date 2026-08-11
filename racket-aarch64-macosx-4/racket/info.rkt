@@ -5,7 +5,4 @@
 (define install-platform "aarch64-macosx")
 
 (define copy-foreign-libs
-  '("ossl-modules"
-    "libssl.3.dylib"
-    "libcrypto.3.dylib"
-    "libedit.0.dylib"))
+  '("ossl-modules" "libssl.3.dylib" "libcrypto.3.dylib" "libedit.0.dylib"))
